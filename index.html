@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imóvel Guide</title>
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <link rel="icon" type="image/x-icon" href="./IMG/favicon.ico" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <picture class="logo">
+        <img src="IMG/logo-imovel-guide.png" alt="Logo Imovel Guide" />
+      </picture>
+      <div class="dropdown-responsiveness">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="menu-left">
+          <a href="https://imovelguide.com.br/condominios" class="headerNav"
+            >Condomínios</a
+          >
+          <a
+            href="https://imovelguide.com.br/forum"
+            class="headerNav"
+            target="_blank"
+            >Fórum</a
+          >
+          <a
+            href="https://imovelguide.com.br/guia"
+            class="headerNav"
+            target="_blank"
+            >Guia</a
+          >
+          <a
+            href="https://imovelguide.com.br/artigos"
+            class="headerNav"
+            target="_blank"
+            >Artigos</a
+          >
+          <a
+            href="https://imovelguide.com.br/calculos"
+            class="headerNav"
+            target="_blank"
+            >Ferramentas</a
+          >
+        </div>
+      </div>
+      <div class="menu-right">
+        <a
+          href="https://imovelguide.com.br/cotacao-imovel"
+          class="headerNav"
+          target="_blank"
+          >Cotar Imóvel</a
+        >
+        <a
+          href="https://imovelguide.com.br/planos"
+          class="headerNav"
+          target="_blank"
+          >Planos</a
+        >
+        <a
+          href="https://imovelguide.com.br/login"
+          class="headerNav"
+          target="_blank"
+          >Entrar</a
+        >
+        <a
+          href="https://imovelguide.com.br/cadastre-se"
+          class="headerNav-btn"
+          target="_blank"
+          >Cadastre-se</a
+        >
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <article class="agents">
+          <div class="section" id="agents-section">
+            <div class="agent-card">
+              <img
+                class="blur-img"
+                src="IMG\Women.jpg"
+                alt="blured agent woman"
+              />
+              <img class="agent" src="IMG\Women.jpg" alt="Agent woman" />
+              <div class="agent-info">
+                <p>Nome Corretora</p>
+                <p class="role">3.000 pontos</p>
+                <button class="phone-btn" onclick="showPhone(this)">
+                  Ver Telefone
+                </button>
+                <span class="hidden">(11) 4525-2359</span>
+              </div>
+            </div>
+            <div class="agent-card">
+              <img class="blur-img" src="IMG\man.jpg" alt="blured agent man" />
+              <img class="agent" src="IMG\man.jpg" alt="Agent man" />
+              <div class="agent-info">
+                <p>Nome Corretor</p>
+                <p class="role">1.260 pontos</p>
+                <button class="phone-btn" onclick="showPhone(this)">
+                  Ver Telefone
+                </button>
+                <p class="hidden">(11) 4652-2854</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="message">
+          <div class="section" id="message-section">
+            <h3>Mande uma mensagem:</h3>
+            <div class="message-section">
+              <input
+                maxlength="14"
+                type="text"
+                id="cpf"
+                placeholder="Digite seu CPF"
+              />
+              <input
+                maxlength="15"
+                type="text"
+                id="phone"
+                placeholder="Digite seu telefone"
+              />
+              <input type="text" id="subject" placeholder="Digite o assunto" />
+              <button type="button" onclick="enviarMensagem()">
+                Enviar Mensagem
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ruleOfThree">
+          <div class="section" id="rule-of-three-section">
+            <h3>Regra de 3</h3>
+            <div class="inputs">
+              <div class="row">
+                <input type="number" id="value1" placeholder="60" />
+                <span>—</span>
+                <input type="number" id="value2" placeholder="100" />
+              </div>
+              <div class="row">
+                <input type="number" id="value3" placeholder="30" />
+                <span>—</span>
+                <div id="result-box" class="result-box"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="property-section">
+          <img
+            class="property-image"
+            src="IMG\property.png"
+            alt="Property Image"
+          />
+          <button id="openModalButton" onclick="openModal()">
+            Abrir Imagem no Modal
+          </button>
+        </article>
+
+        <article class="property-section">
+          <img
+            class="property-image"
+            src="IMG\property.png"
+            alt="Property Image"
+          />
+          <button id="downloadButton">Download</button>
+        </article>
+
+        <article class="property-zoom">
+          <div class="property-image-zoom">
+            <img
+              class="property-img-zoom"
+              src="IMG\property.png"
+              alt="Property Image"
+            />
+          </div>
+        </article>
+      </div>
+
+      <article class="background-modal">
+        <div id="imageModal" class="modal">
+          <span id="closeModalButton" class="close">&times;</span>
+          <hr />
+          <img
+            class="modal-content"
+            src="IMG\property.png"
+            id="modalImage"
+            alt="Property Image"
+          />
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <a
+          href="https://imovelguide.com.br/termos"
+          class="footer"
+          target="_blank"
+          >Termos</a
+        >
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdj7AeD2njhsHM4AE-8Nm04Zpas8nKZFfmIH4zm2PKIlWyZ1w/viewform"
+          class="footerNav"
+          target="_blank"
+          >Contatos</a
+        >
+        <a
+          href="https://imovelguide.com.br/quem-somos"
+          class="footer"
+          target="_blank"
+          >Sobre</a
+        >
+      </div>
+      <div class="footer-right">
+        <p class="copyright">© Copyright 2024. Todos os direitos reservados.</p>
+        <picture class="logo">
+          <img src="IMG\logo-imovel-guide.png" alt="Logo Imovel Guide" />
+        </picture>
+      </div>
+    </footer>
+
+    <script src="./JS/scripts.js"></script>
+  </body>
+</html>
